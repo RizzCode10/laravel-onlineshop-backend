@@ -9,7 +9,7 @@
         <ul class="sidebar-menu">
             <li class="menu-header">Dashboard</li>
             <li class="nav-item dropdown ">
-                <a href="#" class="nav-link has-dropdown"><i class="fas fa-fire"></i><span>Dashboard</span></a>
+                <a href="{{ route('home') }}" class="nav-link has-dropdown"><i class="fas fa-fire"></i><span>Dashboard</span></a>
                 <ul class="dropdown-menu">
                     <li class='{{ Request::is('dashboard-general-dashboard') ? 'active' : '' }}'>
                         <a class="nav-link" href="{{ url('dashboard-general-dashboard') }}">General Dashboard</a>
@@ -20,7 +20,7 @@
 
 
             <li class="nav-item dropdown ">
-                <a href="#" class="nav-link has-dropdown"><i class="fas fa-fire"></i><span>Users</span></a>
+                <a href="{{ route('user.index') }}" class="nav-link has-dropdown"><i class="fas fa-fire"></i><span>Users</span></a>
                 <ul class="dropdown-menu">
                     <li>
                         <a class="nav-link" href="{{ route('user.index') }}">All Users</a>
@@ -29,7 +29,7 @@
                 </ul>
             </li>
             <li class="nav-item dropdown ">
-                <a href="#" class="nav-link has-dropdown"><i class="fas fa-fire"></i><span>Category</span></a>
+                <a href="{{ route('category.index') }}" class="nav-link has-dropdown"><i class="fas fa-fire"></i><span>Category</span></a>
                 <ul class="dropdown-menu">
                     <li>
                         <a class="nav-link" href="{{ route('category.index') }}">All Category</a>
@@ -38,7 +38,7 @@
                 </ul>
             </li>
             <li class="nav-item dropdown ">
-                <a href="#" class="nav-link has-dropdown"><i class="fas fa-fire"></i><span>Product</span></a>
+                <a href="{{ route('product.index') }}" class="nav-link has-dropdown"><i class="fas fa-fire"></i><span>Product</span></a>
                 <ul class="dropdown-menu">
                     <li>
                         <a class="nav-link" href="{{ route('product.index') }}">All Product</a>
