@@ -2,6 +2,8 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Api\AddressController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -31,4 +33,14 @@ Route::get('/categories', [App\Http\Controllers\Api\CategoryController::class, '
 
 //product
 Route::get('/products', [App\Http\Controllers\Api\ProductController::class, 'index']);
+
+// Address Api Resource
+// Route::apiResource('addresses', App\Http\Controllers\Api\AddressController::class);
+// Route::get('/addresses', [App\Http\Controllers\Api\AddressController::class, 'index']);
+// Route::post('/addresses', [App\Http\Controllers\Api\AddressController::class, 'store']);
+
+Route::middleware('auth:sanctum')->group(function () {
+    Route::get('/addresses', [AddressController::class, 'index']);
+    Route::post('/addresses', [AddressController::class, 'store']);
+});
 
