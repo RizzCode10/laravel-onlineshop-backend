@@ -44,3 +44,7 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::post('/addresses', [AddressController::class, 'store']);
 });
 
+// Order
+// Route::post('/orders', [App\Http\Controllers\Api\OrderController::class, 'order']);
+Route::post('/order', [App\Http\Controllers\Api\OrderController::class, 'order'])->middleware('auth:sanctum');
+
