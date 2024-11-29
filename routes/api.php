@@ -34,6 +34,16 @@ Route::get('/categories', [App\Http\Controllers\Api\CategoryController::class, '
 //product
 Route::get('/products', [App\Http\Controllers\Api\ProductController::class, 'index']);
 
+
+
+// Order
+// Route::post('/orders', [App\Http\Controllers\Api\OrderController::class, 'order']);
+// Route::post('/orders', [App\Http\Controllers\Api\OrderController::class, 'order'])->middleware('auth:sanctum');
+Route::post('/order', [App\Http\Controllers\Api\OrderController::class, 'order'])->middleware('auth:sanctum');
+
+//callback
+Route::post('/callback', [App\Http\Controllers\Api\CallbackController::class, 'callback']);
+
 // Address Api Resource
 // Route::apiResource('addresses', App\Http\Controllers\Api\AddressController::class);
 // Route::get('/addresses', [App\Http\Controllers\Api\AddressController::class, 'index']);
@@ -42,9 +52,9 @@ Route::get('/products', [App\Http\Controllers\Api\ProductController::class, 'ind
 Route::middleware('auth:sanctum')->group(function () {
     Route::get('/addresses', [AddressController::class, 'index']);
     Route::post('/addresses', [AddressController::class, 'store']);
-});
 
-// Order
-// Route::post('/orders', [App\Http\Controllers\Api\OrderController::class, 'order']);
-Route::post('/order', [App\Http\Controllers\Api\OrderController::class, 'order'])->middleware('auth:sanctum');
+    // Order
+    Route::post('/orders', [App\Http\Controllers\Api\OrderController::class, 'order']);
+});
+Route::post('/callback', [App\Http\Controllers\Api\CallbackController::class, 'callback']);
 
